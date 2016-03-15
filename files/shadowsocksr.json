@@ -1,8 +1,16 @@
 {
-    "server": "serv-ro.ddns.info",
-    "server_port": 23143,
+    "server": "serverip",
+    "server_port": 443,
+    "password": "password",
+    "local_address": "127.0.0.1",
     "local_port": 1080,
-    "password": "test.TEST",
-    "timeout": 60,
-    "method": "aes-256-cfb"
+    "timeout": 120,
+    "method": "rc4-md5",
+    "protocol": "auth_sha1_v2",
+    "protocol_param": "",
+    "obfs": "tls1.0_session_auth",
+    "obfs_param": "",
+    "redirect": "",
+    "dns_ipv6": false,
+    "fast_open": false,
 }
