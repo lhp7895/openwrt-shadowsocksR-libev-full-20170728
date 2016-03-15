@@ -4,7 +4,7 @@ PKG_NAME:=shadowsocksr-libev
 PKG_VERSION:=2.4.5
 PKG_RELEASE=1
 
-PKG_SOURCE:=v$(PKG_VERSION).tar.gz
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/breakwa11/shadowsocks-libev.git
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=9dd25c3f1dee13f32350c9c1749bac293648522f
