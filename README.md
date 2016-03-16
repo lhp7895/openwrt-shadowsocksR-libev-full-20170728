@@ -38,7 +38,7 @@ ShadowsocksR-libev-full for OpenWrt
    > 安装方法：  
      >> shadowsocksr-libev-gfwlist 使用openssl加密库 完整安装需要约 5.0M 空间  
      >> shadowsocksr-libev-gfwlist-polarssl 使用polarssl加密库 完整安装需要约 3.5M 空间  
-     >> 用 winscp 把对应平台的 shadowsocksr-libev-gfwlist*.ipk 文件上传到路由器 /tmp 目录  
+     >> 用 winscp 把对应平台的 shadowsocksr-libev-gfwlist 的ipk文件上传到路由器 /tmp 目录  
      >> 带上--force-overwrite 选项运行 opkg install  
      >> ```bash  
      >> opkg --force-overwrite install /tmp/shadowsocksr-libev-gfwlist*.ipk  
