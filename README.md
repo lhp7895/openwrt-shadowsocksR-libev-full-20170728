@@ -1,8 +1,11 @@
-ShadowsocksR-libev-full for OpenWrt   
+ShadowsocksR-libev-full for OpenWrt  
 ===
 
 简介
 ---
+
+ 本项目尚在完善中，感兴趣的朋友可以先试用我的另外一个兄弟项目，移植的是原版的Shadowsocks-libev。  
+ 项目地址： [openwrt-shadowsocks-libev-full][O]  
 
  本项目是 [shadowsocksR-libev][1] 在 OpenWrt 上的完整移植，包括服务器端和客户端。   
  当前版本: 2.4.5-1  
@@ -79,7 +82,7 @@ ShadowsocksR-libev-full for OpenWrt
 
 ----------
 
-
+  [O]: https://github.com/bettermanbao/openwrt-shadowsocks-libev-full
   [1]: https://github.com/breakwa11/shadowsocks-libev
   [R]: https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/releases
   [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
