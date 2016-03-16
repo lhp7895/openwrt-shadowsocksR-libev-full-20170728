@@ -20,38 +20,38 @@ ShadowsocksR-libev-full for OpenWrt
 
    > 官方原版客户端  
    
-   > 可执行文件 `ss-{local,redir,tunnel}`  
+   > 可执行文件 `ssr-{local,redir,tunnel}`  
    > 默认启动:  
-   > `ss-redir` 提供透明代理  
-   > `ss-tunnel` 提供 UDP 转发, 用于 DNS 查询。  
+   > `ssr-redir` 提供透明代理  
+   > `ssr-tunnel` 提供隧道转发   
 
  - shadowsocksR-libev-gfwlist
 
    > 集成gfwlist的一键安装版客户端，带luci界面  
    
-   > 可执行文件 `ss-{redir,rules,tunnel}`  
+   > 可执行文件 `ssr-{redir,tunnel,watchdog}`  
    > 默认启动:  
-   > `ss-redir` 提供透明代理  
-   > `ss-tunnel` 提供 UDP 转发, 用于 DNS 查询。  
-   > `ss-watchdog` 守护进程，每10分钟检查一次 www.google.com.hk 的联通情况。
+   > `ssr-redir` 提供透明代理  
+   > `ssr-tunnel` 提供 UDP 转发, 用于 DNS 查询。  
+   > `ssr-watchdog` 守护进程，每10分钟检查一次 www.google.com.hk 的联通情况。
    
    > 安装方法：  
-     >> shadowsocks-libev-gfwlist_2.4.5-3.ipk 使用openssl加密库 完整安装需要约 5.0M 空间  
-     >> shadowsocks-libev-gfwlist-polarssl_2.4.5-3.ipk 使用polarssl加密库 完整安装需要约 3.5M 空间  
-     >> 用 winscp 把对应平台的 shadowsocks-libev-gfwlist_2.4.5-3.ipk 上传到路由器 /tmp 目录  
-     >> 带上--force-overwrite 选项运行 opkg install
-     >> ```bash
-     >> opkg --force-overwrite install /tmp/shadowsocks-libev-gfwlist_2.4.5-3_*.ipk  
-     >> ```
+     >> shadowsocksr-libev-gfwlist 使用openssl加密库 完整安装需要约 5.0M 空间  
+     >> shadowsocksr-libev-gfwlist-polarssl 使用polarssl加密库 完整安装需要约 3.5M 空间  
+     >> 用 winscp 把对应平台的 shadowsocksr-libev-gfwlist*.ipk 文件上传到路由器 /tmp 目录  
+     >> 带上--force-overwrite 选项运行 opkg install  
+     >> ```bash  
+     >> opkg --force-overwrite install /tmp/shadowsocksr-libev-gfwlist*.ipk  
+     >> ```  
      >> 安装结束时会提示一条错误信息，这是升级dnsmasq-full时的配置文件残留造成的，可以忽略。  
 
  - shadowsocksR-libev-server
 
    > 官方原版服务器端  
    
-   > 可执行文件 `ss-server`  
+   > 可执行文件 `ssr-server`  
    > 默认启动:  
-   > `ss-server` 提供 shadowsocks 服务  
+   > `ssr-server` 提供 shadowsocks 服务  
 
 编译
 ---
