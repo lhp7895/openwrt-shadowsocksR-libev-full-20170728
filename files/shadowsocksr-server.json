@@ -1,0 +1,17 @@
+{
+    "server": "0.0.0.0",
+    "server_ipv6": "::",
+    "server_port": 443,
+    "local_address": "127.0.0.1",
+    "local_port": 443,
+    "password": "password",
+    "timeout": 60,
+    "method": "rc4-md5",
+    "protocol": "auth_sha1_v2",
+    "protocol_param": "",
+    "obfs": "tls1.0_session_auth",
+    "obfs_param": "",
+    "redirect": "",
+    "dns_ipv6": false,
+    "fast_open": false,
+}
