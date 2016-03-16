@@ -7,7 +7,7 @@ ShadowsocksR-libev-full for OpenWrt
  本项目尚在完善中，感兴趣的朋友可以先试用我的另外一个项目，移植的是原版的Shadowsocks-libev。  
  项目地址： [openwrt-shadowsocks-libev-full][O]  
 
- 本项目是 [shadowsocksR-libev][1] 在 OpenWrt 上的完整移植，包括客户器端和服务端。   
+ 本项目是 [shadowsocksR-libev][1] 在 OpenWrt 上的完整移植，包括客户端和服务器端。   
  当前版本: 2.4.5-2  
  [预编译 OpenWrt Chaos Calmer 15.05 ipk 下载][R]
 
