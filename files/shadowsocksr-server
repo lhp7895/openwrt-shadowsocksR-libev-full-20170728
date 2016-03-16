@@ -9,9 +9,9 @@ SERVICE_DAEMONIZE=1
 CONFIG=/etc/shadowsocksr-server.json
 
 start() {
-	service_start /usr/bin/ss-server -c $CONFIG -u
+	service_start /usr/bin/ssr-server -c $CONFIG -u
 }
 
 stop() {
-	service_stop /usr/bin/ss-server
+	service_stop /usr/bin/ssr-server
 }
