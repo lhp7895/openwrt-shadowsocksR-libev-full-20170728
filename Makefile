@@ -55,6 +55,13 @@ define Package/shadowsocksr-libev-gfwlist-polarssl
   DEPENDS:=+libpolarssl +libpthread +dnsmasq-full +ipset +iptables +wget-nossl
 endef
 
+define Package/shadowsocksr-libev-gfwlist-4M
+  $(call Package/shadowsocksr-libev/Default)
+  TITLE+= (PolarSSL)
+  VARIANT:=polarssl
+  DEPENDS:=+libpolarssl +libpthread +dnsmasq-full +ipset +iptables
+endef
+
 define Package/shadowsocksr-libev-server
   $(call Package/shadowsocksr-libev/Default)
   TITLE+= (OpenSSL)
@@ -76,6 +83,7 @@ endef
 Package/shadowsocksr-libev-polarssl/description=$(Package/shadowsocksr-libev/description)
 Package/shadowsocksr-libev-gfwlist/description=$(Package/shadowsocksr-libev/description)
 Package/shadowsocksr-libev-gfwlist-polarssl/description=$(Package/shadowsocksr-libev/description)
+Package/shadowsocksr-libev-gfwlist-4M/description=$(Package/shadowsocksr-libev/description)
 Package/shadowsocksr-libev-server/description=$(Package/shadowsocksr-libev/description)
 Package/shadowsocksr-libev-server-polarssl/description=$(Package/shadowsocksr-libev/description)
 
@@ -91,6 +99,7 @@ define Package/shadowsocksr-libev-gfwlist/conffiles
 endef
 
 Package/shadowsocksr-libev-gfwlist-polarssl/conffiles = $(Package/shadowsocksr-libev-gfwlist/conffiles)
+Package/shadowsocksr-libev-gfwlist-4M/conffiles = $(Package/shadowsocksr-libev-gfwlist/conffiles)
 
 define Package/shadowsocksr-libev-server/conffiles
 /etc/shadowsocksr-server.json
@@ -149,6 +158,9 @@ endef
 Package/shadowsocksr-libev-gfwlist-polarssl/preinst = $(Package/shadowsocksr-libev-gfwlist/preinst)
 Package/shadowsocksr-libev-gfwlist-polarssl/postinst = $(Package/shadowsocksr-libev-gfwlist/postinst)
 Package/shadowsocksr-libev-gfwlist-polarssl/postrm = $(Package/shadowsocksr-libev-gfwlist/postrm)
+Package/shadowsocksr-libev-gfwlist-4M/preinst = $(Package/shadowsocksr-libev-gfwlist/preinst)
+Package/shadowsocksr-libev-gfwlist-4M/postinst = $(Package/shadowsocksr-libev-gfwlist/postinst)
+Package/shadowsocksr-libev-gfwlist-4M/postrm = $(Package/shadowsocksr-libev-gfwlist/postrm)
 
 CONFIGURE_ARGS += --disable-ssp
 
@@ -192,6 +204,28 @@ endef
 
 Package/shadowsocksr-libev-gfwlist-polarssl/install = $(Package/shadowsocksr-libev-gfwlist/install)
 
+define Package/shadowsocksr-libev-4M/install
+	$(INSTALL_DIR) $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-redir $(1)/usr/bin/ssr-redir
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-tunnel $(1)/usr/bin/ssr-tunnel
+	$(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_CONF) ./files/shadowsocksr-gfwlist.json $(1)/etc/shadowsocksr.json
+	$(INSTALL_BIN) ./files/shadowsocksr-gfwlist $(1)/etc/init.d/shadowsocksr
+	$(INSTALL_DIR) $(1)/etc/dnsmasq.d
+	$(INSTALL_CONF) ./files/dnsmasq_list.conf $(1)/etc/dnsmasq.d/dnsmasq_list.conf
+	$(INSTALL_CONF) ./files/custom_list.conf $(1)/etc/dnsmasq.d/custom_list.conf
+	$(INSTALL_DIR) $(1)/root
+	$(INSTALL_BIN) ./files/ssr-watchdog-4M $(1)/root/ssr-watchdog
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
+	$(INSTALL_CONF) ./files/shadowsocksr-libev.lua $(1)/usr/lib/lua/luci/controller/shadowsocksr-libev.lua
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi/shadowsocksr-libev
+	$(INSTALL_CONF) ./files/shadowsocksr-libev-general.lua $(1)/usr/lib/lua/luci/model/cbi/shadowsocksr-libev/shadowsocksr-libev-general.lua
+	$(INSTALL_CONF) ./files/shadowsocksr-libev-custom.lua $(1)/usr/lib/lua/luci/model/cbi/shadowsocksr-libev/shadowsocksr-libev-custom.lua
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/shadowsocksr-libev
+	$(INSTALL_CONF) ./files/gfwlistr.htm $(1)/usr/lib/lua/luci/view/shadowsocksr-libev/gfwlistr.htm
+	$(INSTALL_CONF) ./files/watchdogr.htm $(1)/usr/lib/lua/luci/view/shadowsocksr-libev/watchdogr.htm
+endef
+
 define Package/shadowsocksr-libev-server/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_CONF) ./files/shadowsocksr-server.json $(1)/etc/shadowsocksr-server.json
@@ -206,5 +240,6 @@ $(eval $(call BuildPackage,shadowsocksr-libev))
 $(eval $(call BuildPackage,shadowsocksr-libev-polarssl))
 $(eval $(call BuildPackage,shadowsocksr-libev-gfwlist))
 $(eval $(call BuildPackage,shadowsocksr-libev-gfwlist-polarssl))
+$(eval $(call BuildPackage,shadowsocksr-libev-gfwlist-4M))
 $(eval $(call BuildPackage,shadowsocksr-libev-server))
 $(eval $(call BuildPackage,shadowsocksr-libev-server-polarssl))
