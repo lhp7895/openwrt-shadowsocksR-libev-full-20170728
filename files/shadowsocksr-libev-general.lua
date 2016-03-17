@@ -5,7 +5,7 @@ f = SimpleForm("general", translate("ShadowsocksR  - General Settings"), transla
 
 t = f:field(TextValue, "conf")
 t.rmempty = true
-t.rows = 10
+t.rows = 20
 function t.cfgvalue()
 	return fs.readfile(conffile) or ""
 end
