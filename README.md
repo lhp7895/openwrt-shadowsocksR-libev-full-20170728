@@ -22,7 +22,7 @@ ShadowsocksR-libev-full for OpenWrt
    
    > 可执行文件 `ssr-{local,redir,tunnel}`  
    > 默认启动:  
-   > `ssr-local` 提供socks代理  
+   > `ssr-local` 提供 SOCKS 代理  
 
  - shadowsocksR-libev-gfwlist
 
