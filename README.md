@@ -27,7 +27,7 @@ ShadowsocksR-libev-full for OpenWrt
  - shadowsocksR-libev-gfwlist
 
    > 集成 GFW List 的一键安装版客户端，安装后只要在luci界面填入服务器信息就能直接使用。  
-   > 此一键安装包已预置测试用的shadowsocks服务器，建议安装后直接测试 www.google.com.hk 是否可以访问。
+   > 此版本已预置测试用的shadowsocks服务器，建议安装后直接访问 www.google.com.hk 检测配置是否成功。  
    
    > 可执行文件 `ssr-{redir,tunnel,watchdog}`  
    > 默认启动:  
