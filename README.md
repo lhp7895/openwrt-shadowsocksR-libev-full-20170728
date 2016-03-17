@@ -22,7 +22,7 @@ ShadowsocksR-libev-full for OpenWrt
    
    > 可执行文件 `ssr-{local,redir,tunnel}`  
    > 默认启动:  
-   > `ssr-local` 提供sock代理  
+   > `ssr-local` 提供socks代理  
 
  - shadowsocksR-libev-gfwlist
 
@@ -37,6 +37,7 @@ ShadowsocksR-libev-full for OpenWrt
    > 安装方法：  
      >> shadowsocksr-libev-gfwlist 使用openssl加密库 完整安装需要约 5.0M 空间  
      >> shadowsocksr-libev-gfwlist-polarssl 使用polarssl加密库 完整安装需要约 3.5M 空间  
+     >> 以上两个包只要选一个安装，强烈建议在原版openwrt固件上安装。  
      >> 用 winscp 把对应平台的 shadowsocksr-libev-gfwlist 的ipk文件上传到路由器 /tmp 目录  
      >> 带上--force-overwrite 选项运行 opkg install  
      >> ```bash  
