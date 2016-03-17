@@ -117,14 +117,17 @@ endef
 
 define Package/shadowsocksr-libev-gfwlist/postinst
 #!/bin/sh
-/etc/init.d/firewall restart
+ipset -N gfwlist iphash
+iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
+iptables -t nat -A OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
+
 /etc/init.d/dnsmasq restart
 /etc/init.d/cron restart
 /etc/init.d/shadowsocksr restart
 exit 0
 endef
 
-define Package/shadowsocks-libev-gfwlist/prerm
+define Package/shadowsocks-libev-gfwlist/postrm
 #!/bin/sh
 sed -i '/cache-size=5000/d' /etc/dnsmasq.conf
 sed -i '/min-cache-ttl=1800/d' /etc/dnsmasq.conf
@@ -145,7 +148,7 @@ endef
 
 Package/shadowsocksr-libev-gfwlist-polarssl/preinst = $(Package/shadowsocksr-libev-gfwlist/preinst)
 Package/shadowsocksr-libev-gfwlist-polarssl/postinst = $(Package/shadowsocksr-libev-gfwlist/postinst)
-Package/shadowsocksr-libev-gfwlist-polarssl/prerm = $(Package/shadowsocksr-libev-gfwlist/prerm)
+Package/shadowsocksr-libev-gfwlist-polarssl/postrm = $(Package/shadowsocksr-libev-gfwlist/postrm)
 
 CONFIGURE_ARGS += --disable-ssp
 
