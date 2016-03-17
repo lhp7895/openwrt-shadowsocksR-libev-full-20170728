@@ -204,7 +204,7 @@ endef
 
 Package/shadowsocksr-libev-gfwlist-polarssl/install = $(Package/shadowsocksr-libev-gfwlist/install)
 
-define Package/shadowsocksr-libev-4M/install
+define Package/shadowsocksr-libev-gfwlist-4M/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-redir $(1)/usr/bin/ssr-redir
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-tunnel $(1)/usr/bin/ssr-tunnel
