@@ -8,5 +8,5 @@
     "protocol_param": "",
     "obfs": "plain",
     "obfs_param": "",
-    "fast_open": false,
+    "fast_open": false
 }
