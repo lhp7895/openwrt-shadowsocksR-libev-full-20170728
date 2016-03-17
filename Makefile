@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=shadowsocksr-libev
+PKG_NAME:=shadowsocksR-libev
 PKG_VERSION:=2.4.5
 PKG_RELEASE:=2
 
@@ -9,7 +9,7 @@ PKG_SOURCE_URL:=https://github.com/breakwa11/shadowsocks-libev.git
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=6214de59b370eab12b06ff9a20dd5bad55afc769
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_MAINTAINER:=Max Lv <max.c.lv@gmail.com>
+PKG_MAINTAINER:=breakwa11
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
 
