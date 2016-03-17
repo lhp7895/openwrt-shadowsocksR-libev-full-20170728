@@ -1,7 +1,7 @@
 local fs = require "nixio.fs"
 local conffile = "/etc/shadowsocksr.json" 
 
-f = SimpleForm("general", translate("ShadowsocksR  - General Settings"), translate("This is the config file for ShadowsocksR. Do NOT modify local_port, unless you know what you are doing."))
+f = SimpleForm("general", translate("ShadowsocksR  - General Settings"), translate("This is the config file for ShadowsocksR."))
 
 t = f:field(TextValue, "conf")
 t.rmempty = true
