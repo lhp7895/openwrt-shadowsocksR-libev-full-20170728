@@ -9,9 +9,9 @@ SERVICE_DAEMONIZE=1
 CONFIG=/etc/shadowsocksr.json
 
 start() {
-	service_start /usr/bin/ssr-local -c $CONFIG
-	#service_start /usr/bin/ssr-redir -c $CONFIG
-	#service_start /usr/bin/ssr-tunnel -c $CONFIG -l 5353 -L 8.8.8.8:53 -U
+	service_start /usr/bin/ssr-local -c $CONFIG -b 0.0.0.0 -l 1080
+	#service_start /usr/bin/ssr-redir -c $CONFIG -b 0.0.0.0 -l 1080
+	#service_start /usr/bin/ssr-tunnel -c $CONFIG -b 0.0.0.0 -l 5353 -L 8.8.8.8:53 -U
 }
 
 stop() {
