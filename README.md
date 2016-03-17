@@ -49,6 +49,7 @@ ShadowsocksR-libev-full for OpenWrt
  - shadowsocksR-libev-server
 
    > 官方原版服务器端  
+   > 目前仅支持Shadowsocks原版协议
    
    > 可执行文件 `ssr-server`  
    > 默认启动:  
