@@ -8,7 +8,7 @@ if [ "$?" == "0" ]; then
 else
 	wget -s -q -T 3 www.baidu.com
 	if [ "$?" == "0" ]; then
-		echo '['$LOGTIME'] Problem decteted, restarting shadowsocks.'
+		echo '['$LOGTIME'] Problem decteted, restarting ShadowsocksR.'
 		/etc/init.d/shadowsocksr restart
 	else
 		echo '['$LOGTIME'] Network Problem. Do nothing.'
