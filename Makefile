@@ -215,6 +215,7 @@ define Package/shadowsocksr-libev-gfwlist-4M/install
 	$(INSTALL_CONF) ./files/custom_list.conf $(1)/etc/dnsmasq.d/custom_list.conf
 	$(INSTALL_DIR) $(1)/root
 	$(INSTALL_BIN) ./files/ssr-watchdog-4M $(1)/root/ssr-watchdog
+	$(INSTALL_DIR) $(1)/etc/crontabs
 	$(INSTALL_CONF) ./files/root-4M $(1)/etc/crontabs/root
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
 	$(INSTALL_CONF) ./files/shadowsocksr-libev.lua $(1)/usr/lib/lua/luci/controller/shadowsocksr-libev.lua
