@@ -158,9 +158,6 @@ endef
 Package/shadowsocksr-libev-gfwlist-polarssl/preinst = $(Package/shadowsocksr-libev-gfwlist/preinst)
 Package/shadowsocksr-libev-gfwlist-polarssl/postinst = $(Package/shadowsocksr-libev-gfwlist/postinst)
 Package/shadowsocksr-libev-gfwlist-polarssl/postrm = $(Package/shadowsocksr-libev-gfwlist/postrm)
-Package/shadowsocksr-libev-gfwlist-4M/preinst = $(Package/shadowsocksr-libev-gfwlist/preinst)
-Package/shadowsocksr-libev-gfwlist-4M/postinst = $(Package/shadowsocksr-libev-gfwlist/postinst)
-Package/shadowsocksr-libev-gfwlist-4M/postrm = $(Package/shadowsocksr-libev-gfwlist/postrm)
 
 CONFIGURE_ARGS += --disable-ssp
 
@@ -211,11 +208,14 @@ define Package/shadowsocksr-libev-gfwlist-4M/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_CONF) ./files/shadowsocksr-gfwlist.json $(1)/etc/shadowsocksr.json
 	$(INSTALL_BIN) ./files/shadowsocksr-gfwlist $(1)/etc/init.d/shadowsocksr
+	$(INSTALL_CONF) ./files/firewall.user-4M $(1)/etc/firewall.user
+	$(INSTALL_CONF) ./files/dnsmasq.conf-4M $(1)/etc/dnsmasq.conf
 	$(INSTALL_DIR) $(1)/etc/dnsmasq.d
 	$(INSTALL_CONF) ./files/dnsmasq_list.conf $(1)/etc/dnsmasq.d/dnsmasq_list.conf
 	$(INSTALL_CONF) ./files/custom_list.conf $(1)/etc/dnsmasq.d/custom_list.conf
 	$(INSTALL_DIR) $(1)/root
 	$(INSTALL_BIN) ./files/ssr-watchdog-4M $(1)/root/ssr-watchdog
+	$(INSTALL_CONF) ./files/root-4M $(1)/etc/crontabs/root
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
 	$(INSTALL_CONF) ./files/shadowsocksr-libev.lua $(1)/usr/lib/lua/luci/controller/shadowsocksr-libev.lua
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi/shadowsocksr-libev
