@@ -1,0 +1,3 @@
+*/10 * * * * /root/ss-test >> /var/log/shadowsocks_watchdog.log 2>&1
+0 1 * * 0 echo "" > /var/log/shadowsocks_watchdog.log
+#0 1 * * 0 sleep 70 && touch /etc/banner && reboot
