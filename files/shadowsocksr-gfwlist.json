@@ -3,10 +3,7 @@
     "server_port": 23143,
     "password": "test.TEST",
     "method": "aes-256-cfb",
-    "timeout": 120,
     "protocol": "origin",
-    "protocol_param": "",
     "obfs": "plain",
-    "obfs_param": "",
-    "fast_open": false
+    "timeout": 120
 }
