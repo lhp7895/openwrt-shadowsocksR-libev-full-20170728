@@ -67,7 +67,7 @@ ShadowsocksR-libev-full for OpenWrt
    tar xjf OpenWrt-SDK-15.05-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
    cd OpenWrt-SDK-15.05-ar71xx-*
    # 获取 Makefile
-   git clone https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full.git package/shadowsocksr-libev-full
+   git clone https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full.git package/shadowsocksR-libev-full
    # 选择要编译的包 Network -> shadowsocksr-libev
    make menuconfig
    # 开始编译
