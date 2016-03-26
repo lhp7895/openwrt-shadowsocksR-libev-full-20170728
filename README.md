@@ -71,7 +71,7 @@ ShadowsocksR-libev-full for OpenWrt
    # 选择要编译的包 Network -> shadowsocksr-libev
    make menuconfig
    # 开始编译
-   make package/shadowsocksr-libev-full/compile V=s
+   make package/shadowsocksR-libev-full/compile V=s
    ```
 
 配置  
