@@ -110,7 +110,7 @@ Package/shadowsocksr-libev-server-polarssl/conffiles = $(Package/shadowsocksr-li
 define Package/shadowsocksr-libev-gfwlist/preinst
 #!/bin/sh
 if [ ! -f /etc/dnsmasq.d/custom_list.conf ]; then
-	echo "ipset -N gfwlist iphash" >> /etc/firewall.user
+	echo "ipset create gfwlist hash:ip" >> /etc/firewall.user
 	echo "iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080" >> /etc/firewall.user
 	echo "iptables -t nat -A OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080" >> /etc/firewall.user
 	
@@ -126,7 +126,7 @@ endef
 
 define Package/shadowsocksr-libev-gfwlist/postinst
 #!/bin/sh
-ipset -N gfwlist iphash
+ipset create gfwlist hash:ip
 iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
 iptables -t nat -A OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
 
@@ -144,7 +144,7 @@ sed -i '/conf-dir=\/etc\/dnsmasq.d/d' /etc/dnsmasq.conf
 rm -rf /etc/dnsmasq.d
 /etc/init.d/dnsmasq restart
 
-sed -i '/ipset -N gfwlist iphash/d' /etc/firewall.user
+sed -i '/ipset create gfwlist hash:ip/d' /etc/firewall.user
 sed -i '/iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080/d' /etc/firewall.user
 sed -i '/iptables -t nat -A OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080/d' /etc/firewall.user
 ipset flush gfwlist
