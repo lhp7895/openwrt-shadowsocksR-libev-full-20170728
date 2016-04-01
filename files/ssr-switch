@@ -30,8 +30,8 @@ else
 	if [ "$?" == "0" ]; then
 		echo "[$LOGTIME] Problem decteted, restart ShadowsocksR."
 		/etc/init.d/shadowsocksr restart
-		sleep 3
 		if [ $CURRENT == "main" ]; then
+			sleep 3
 			wget -s -q -T 3 www.google.com.hk
 			if [ "$?" == "0" ]; then
 				echo "[$LOGTIME] ShadowsocksR recovered."
