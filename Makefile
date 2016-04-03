@@ -111,8 +111,8 @@ define Package/shadowsocksr-libev-gfwlist/preinst
 #!/bin/sh
 if [ ! -f /etc/dnsmasq.d/custom_list.conf ]; then
 	echo "ipset create gfwlist hash:ip" >> /etc/firewall.user
-	echo "iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080" >> /etc/firewall.user
-	echo "iptables -t nat -A OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080" >> /etc/firewall.user
+	echo "iptables -t nat -I PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080" >> /etc/firewall.user
+	echo "iptables -t nat -I OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080" >> /etc/firewall.user
 	
 	echo "cache-size=5000" >> /etc/dnsmasq.conf
 	echo "min-cache-ttl=1800" >> /etc/dnsmasq.conf
@@ -127,8 +127,8 @@ endef
 define Package/shadowsocksr-libev-gfwlist/postinst
 #!/bin/sh
 ipset create gfwlist hash:ip
-iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
-iptables -t nat -A OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
+iptables -t nat -I PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
+iptables -t nat -I OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080
 
 /etc/init.d/dnsmasq restart
 /etc/init.d/cron restart
@@ -145,8 +145,8 @@ rm -rf /etc/dnsmasq.d
 /etc/init.d/dnsmasq restart
 
 sed -i '/ipset create gfwlist hash:ip/d' /etc/firewall.user
-sed -i '/iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080/d' /etc/firewall.user
-sed -i '/iptables -t nat -A OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080/d' /etc/firewall.user
+sed -i '/iptables -t nat -I PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080/d' /etc/firewall.user
+sed -i '/iptables -t nat -I OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080/d' /etc/firewall.user
 ipset flush gfwlist
 
 sed -i '/shadowsocksr_watchdog.log/d' /etc/crontabs/root
