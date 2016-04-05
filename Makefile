@@ -2,12 +2,12 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=shadowsocksR-libev
 PKG_VERSION:=2.4.5
-PKG_RELEASE:=4
+PKG_RELEASE:=5
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_RELEASE).tar.gz
 PKG_SOURCE_URL:=https://github.com/breakwa11/shadowsocks-libev.git
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=1532135de42a3ca3f8fb63929708f7c25d03a478
+PKG_SOURCE_VERSION:=354061b6e992cb06d0b7340a770ca35a4b289bbb
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_MAINTAINER:=breakwa11
 
@@ -206,15 +206,16 @@ define Package/shadowsocksr-libev-gfwlist-4M/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-redir $(1)/usr/bin/ssr-redir
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-tunnel $(1)/usr/bin/ssr-tunnel
 	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_CONF) ./files/shadowsocksr-gfwlist.json $(1)/etc/shadowsocksr.json
-	$(INSTALL_BIN) ./files/shadowsocksr-gfwlist $(1)/etc/init.d/shadowsocksr
+	$(INSTALL_CONF) ./files/shadowsocksr-gfwlist.json $(1)/etc/shadowsocksr.json.main
+	$(INSTALL_CONF) ./files/shadowsocksr-gfwlist.json $(1)/etc/shadowsocksr.json.backup
+	$(INSTALL_BIN) ./files/shadowsocksr-ha $(1)/etc/init.d/shadowsocksr
 	$(INSTALL_CONF) ./files/firewall.user-4M $(1)/etc/firewall.user
 	$(INSTALL_CONF) ./files/dnsmasq.conf-4M $(1)/etc/dnsmasq.conf
 	$(INSTALL_DIR) $(1)/etc/dnsmasq.d
 	$(INSTALL_CONF) ./files/dnsmasq_list.conf $(1)/etc/dnsmasq.d/dnsmasq_list.conf
 	$(INSTALL_CONF) ./files/custom_list.conf $(1)/etc/dnsmasq.d/custom_list.conf
 	$(INSTALL_DIR) $(1)/root
-	$(INSTALL_BIN) ./files/ssr-watchdog-4M $(1)/root/ssr-watchdog
+	$(INSTALL_BIN) ./files/ssr-watchdog-ha $(1)/root/ssr-watchdog
 	$(INSTALL_DIR) $(1)/etc/crontabs
 	$(INSTALL_CONF) ./files/root-4M $(1)/etc/crontabs/root
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller
