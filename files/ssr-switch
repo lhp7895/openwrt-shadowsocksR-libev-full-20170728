@@ -13,7 +13,6 @@ if [ $CURRENT == "backup" ]; then
 		ln -sf /etc/shadowsocksr.json.main /etc/shadowsocksr.json
 		CURRENT=$(ls -l /etc/shadowsocksr.json | awk -F "." '{print $4}')
 		/etc/init.d/shadowsocksr restart
-		/etc/init.d/dnsmasq restart
 		sleep 3
 	else
 		echo "[$LOGTIME] Main server down,$PM% packet loss."
@@ -39,8 +38,6 @@ else
 				echo "[$LOGTIME] Main server down, switch to backup server."
 				ln -sf /etc/shadowsocksr.json.backup /etc/shadowsocksr.json
 				/etc/init.d/shadowsocksr restart
-				/etc/init.d/dnsmasq restart
-				sleep 3
 				exit 0
 			fi
 		fi
