@@ -15,10 +15,12 @@ start() {
 	service_start /usr/bin/ssr-redir -c $CONFIG -b 0.0.0.0 -l 1080
 	sleep 1
 	service_start /usr/bin/ssr-tunnel -c $CONFIG -b 0.0.0.0 -l 5353 -L 8.8.8.8:53 -U
+	sleep 1
 }
 
 stop() {
 	service_stop /usr/bin/ssr-redir
 	sleep 1
 	service_stop /usr/bin/ssr-tunnel
+	sleep 1
 }
