@@ -28,7 +28,7 @@ end
 
 function action_gfwlist()
 	local fs = require "nixio.fs"
-	local conffile = "/etc/dnsmasq.d/dnsmasq_list.conf" 
+	local conffile = "/etc/dnsmasq.d/gfw_list.conf" 
 	local gfwlist = fs.readfile(conffile) or ""
 	luci.template.render("shadowsocksr-libev/gfwlistr", {gfwlist=gfwlist})
 end
