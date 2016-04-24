@@ -31,7 +31,7 @@ ShadowsocksR-libev-full for OpenWrt
    > 默认启动:  
    > `ssr-redir` 提供透明代理  
    > `ssr-tunnel` 提供 UDP 转发, 用于 DNS 查询。  
-   > `ssr-watchdog` 守护进程，每10分钟检查一次 www.google.com.hk 的联通情况。
+   > `ssr-watchdog` 守护进程，每10分钟检查一次 www.google.com.hk 的联通情况，并自动切换主服务器和备用服务器。
    
    > 安装方法：  
      >> shadowsocksr-libev-gfwlist 使用openssl加密库 完整安装需要约 5.0M 空间  
