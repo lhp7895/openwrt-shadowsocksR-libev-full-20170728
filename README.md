@@ -9,6 +9,8 @@ ShadowsocksR-libev-full for OpenWrt
  
  [预编译 OpenWrt Chaos Calmer ipk 下载][R]
 
+ [详细介绍][X]
+ 
 特性  
 ---
 
@@ -95,3 +97,4 @@ ShadowsocksR-libev-full for OpenWrt
   [1]: https://github.com/breakwa11/shadowsocks-libev
   [R]: https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/releases
   [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
+  [X]: http://www.right.com.cn/forum/thread-185635-1-1.html
