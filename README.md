@@ -79,7 +79,7 @@ ShadowsocksR-libev-full for OpenWrt
 
  - shadowsocks-libev 配置文件: `/etc/shadowsocksr.json`
 
- - shadowsocks-libev-gfwlist 配置文件: `/etc/shadowsocksr.json`
+ - shadowsocks-libev-gfwlist 配置文件: `/etc/shadowsocksr.json.main /etc/shadowsocksr.json.backup`
 
  - shadowsocks-libev-server 配置文件: `/etc/shadowsocksr-server.json`
 
