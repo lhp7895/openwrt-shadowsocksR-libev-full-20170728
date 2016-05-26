@@ -9,7 +9,7 @@ ShadowsocksR-libev-full for OpenWrt
  
  [预编译 OpenWrt Chaos Calmer ipk 下载][R]
 
- [详细介绍][X]
+ *** [详细介绍][X] ***
  
 特性  
 ---
