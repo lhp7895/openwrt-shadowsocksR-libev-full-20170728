@@ -1,7 +1,7 @@
 {
-    "server": "serv-ro.ddns.info",
-    "server_port": 23143,
-    "password": "test.TEST",
+    "server": "ro.freess.online",
+    "server_port": 10080,
+    "password": "forfreeT",
     "method": "aes-256-cfb",
     "protocol": "origin",
     "obfs": "plain",
