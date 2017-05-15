@@ -1,13 +1,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=shadowsocksR-libev
-PKG_VERSION:=2.5.6
+PKG_VERSION:=v20170514
 PKG_RELEASE:=1pre
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_RELEASE).tar.gz
 PKG_SOURCE_URL:=https://github.com/breakwa11/shadowsocks-libev.git
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=2670ab26ddd63dd790ba6c35f57d4dd040dec194
+PKG_SOURCE_VERSION:=3d51e6af014eb8fd3782f6bf70d2c8352b7e16ca
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_MAINTAINER:=breakwa11
 
@@ -31,49 +31,49 @@ define Package/shadowsocksr-libev
   $(call Package/shadowsocksr-libev/Default)
   TITLE+= (OpenSSL)
   VARIANT:=openssl
-  DEPENDS:=+libopenssl +libpthread
+  DEPENDS:=+libopenssl +libpthread +libpcre
 endef
 
 define Package/shadowsocksr-libev-polarssl
   $(call Package/shadowsocksr-libev/Default)
   TITLE+= (PolarSSL)
   VARIANT:=polarssl
-  DEPENDS:=+libpolarssl +libpthread
+  DEPENDS:=+libpolarssl +libpthread +libpcre
 endef
 
 define Package/shadowsocksr-libev-gfwlist
   $(call Package/shadowsocksr-libev/Default)
   TITLE+= (OpenSSL)
   VARIANT:=openssl
-  DEPENDS:=+libopenssl +libpthread +dnsmasq-full +ipset +iptables +wget
+  DEPENDS:=+libopenssl +libpthread +dnsmasq-full +ipset +iptables +wget +libpcre
 endef
 
 define Package/shadowsocksr-libev-gfwlist-polarssl
   $(call Package/shadowsocksr-libev/Default)
   TITLE+= (PolarSSL)
   VARIANT:=polarssl
-  DEPENDS:=+libpolarssl +libpthread +dnsmasq-full +ipset +iptables +wget-nossl
+  DEPENDS:=+libpolarssl +libpthread +dnsmasq-full +ipset +iptables +wget-nossl +libpcre
 endef
 
 define Package/shadowsocksr-libev-gfwlist-4M
   $(call Package/shadowsocksr-libev/Default)
   TITLE+= (PolarSSL)
   VARIANT:=polarssl
-  DEPENDS:=+libpolarssl +libpthread +dnsmasq-full +ipset +iptables
+  DEPENDS:=+libpolarssl +libpthread +dnsmasq-full +ipset +iptables +libpcre
 endef
 
 define Package/shadowsocksr-libev-server
   $(call Package/shadowsocksr-libev/Default)
   TITLE+= (OpenSSL)
   VARIANT:=openssl
-  DEPENDS:=+libopenssl +libpthread
+  DEPENDS:=+libopenssl +libpthread +libpcre
 endef
 
 define Package/shadowsocksr-libev-server-polarssl
   $(call Package/shadowsocksr-libev/Default)
   TITLE+= (PolarSSL)
   VARIANT:=polarssl
-  DEPENDS:=+libpolarssl +libpthread
+  DEPENDS:=+libpolarssl +libpthread +libpcre
 endef
 
 define Package/shadowsocksr-libev/description
