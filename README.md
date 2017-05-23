@@ -58,3 +58,4 @@ Makefile参考 [openwrt-shadowsocks][P]
   [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
   [X]: http://www.right.com.cn/forum/thread-185635-1-1.html
   [P]: https://github.com/shadowsocks/openwrt-shadowsocks
+  
