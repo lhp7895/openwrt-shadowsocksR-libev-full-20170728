@@ -48,7 +48,7 @@ ShadowsocksR-libev-full for OpenWrt
 感谢  
 ---
 
-Makefile参考 [openwrt-shadowsocks][P]
+Makefile参考  [openwrt-shadowsocks][P]
 
 ----------
 
