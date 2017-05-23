@@ -48,7 +48,7 @@ ShadowsocksR-libev-full for OpenWrt
 感谢  
 ---
 
-Makefile参考  [openwrt-shadowsocks][P]
+Makefile参考  [openwrt-shadowsocks][E]
 
 ----------
 
@@ -57,5 +57,5 @@ Makefile参考  [openwrt-shadowsocks][P]
   [R]: https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/releases
   [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
   [X]: http://www.right.com.cn/forum/thread-185635-1-1.html
-  [P]: https://github.com/shadowsocks/openwrt-shadowsocks
+  [E]: https://github.com/shadowsocks/openwrt-shadowsocks
   
