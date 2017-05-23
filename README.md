@@ -75,6 +75,6 @@ Makefile参考  [openwrt-shadowsocks][E]
   [O]: https://github.com/bettermanbao/openwrt-shadowsocks-libev-full
   [1]: https://github.com/breakwa11/shadowsocks-libev
   [R]: https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/releases
-  [S]: https://downloads.lede-project.org/releases/17.01.1/targets
+  [S]: https://lede-project.org/docs/guide-developer/compile_packages_for_lede_with_the_sdk
   [E]: https://github.com/shadowsocks/openwrt-shadowsocks
   
