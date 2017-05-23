@@ -25,13 +25,14 @@ ShadowsocksR-libev-full for OpenWrt
 ---
 
  - 从 lede 的 [SDK][S] 编译
-
-   ```bash
+ 
+```bash
+   
    # 以 ubuntu 14.04 x86_64 为例
    apt-get update
    apt-get install software-properties-common xz-utils build-essential ccache git libncurses5-dev libncursesw5-dev gawk
    
-   # ubuntu 14.04 以后的版本不需要这一步
+   #ubuntu 14.04 以后的版本不需要这一步
    add-apt-repository ppa:ubuntu-toolchain-r/test
    apt-get update
    apt-get install libstdc++6-4.7-dev libstdc++6
