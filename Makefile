@@ -31,7 +31,7 @@ define Package/shadowsocksr-libev
   $(call Package/shadowsocksr-libev/Default)
   TITLE+= (OpenSSL)
   VARIANT:=openssl
-  DEPENDS:=+libopenssl +libpthread +libpcre
+  DEPENDS:=+libopenssl +libpthread +libpcre +zlib
 endef
 
 define Package/shadowsocksr-libev-polarssl
