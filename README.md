@@ -24,19 +24,38 @@ ShadowsocksR-libev-full for OpenWrt
 编译  
 ---
 
- - 从 OpenWrt 的 [SDK][S] 编译
+ - 从 lede 的 [SDK][S] 编译
 
    ```bash
-   # 以 OpenWrt Chaos Calmer 15.05 ar71xx 平台为例
-   wget https://downloads.openwrt.org/chaos_calmer/15.05/ar71xx/generic/OpenWrt-SDK-15.05-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
-   tar xjf OpenWrt-SDK-15.05-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
-   cd OpenWrt-SDK-15.05-ar71xx-*
-   # 获取 Makefile
+   # 以 ubuntu 14.04 x86_64 为例
+   apt-get update
+   apt-get install software-properties-common xz-utils build-essential ccache git libncurses5-dev libncursesw5-dev gawk
+   
+   # ubuntu 14.04 以后的版本不需要这一步
+   add-apt-repository ppa:ubuntu-toolchain-r/test
+   apt-get update
+   apt-get install libstdc++6-4.7-dev libstdc++6
+   
+   # 下载lede-SDK，以ramips为例
+   wget https://downloads.lede-project.org/releases/17.01.1/targets/ramips/mt7620/lede-sdk-17.01.1-ramips-mt7620_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+   tar xf lede-sdk-17.01.1-ramips-mt7620_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+   cd lede-sdk-*
+   
+   # git clone openwrt-shadowsocksR-libev-full
    git clone https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full.git package/shadowsocksR-libev-full
+   
    # 选择要编译的包 Network -> shadowsocksr-libev
    make menuconfig
+   
+   # 一些杂七杂八的坑
+   ./scripts/feeds update base
+   ./scripts/feeds update packages
+   ./scripts/feeds install libpcre libopenssl libopenssl libmbedtls
+   wget -P package/feeds/base/mbedtls/patches https://github.com/bettermanbao/lede/raw/lede-17.01/package/libs/mbedtls/patches/999-tweak-config-for-shadowsocks.patch
+   
    # 开始编译
    make package/shadowsocksR-libev-full/compile V=s
+   
    ```
 
 配置  
@@ -55,7 +74,6 @@ Makefile参考  [openwrt-shadowsocks][E]
   [O]: https://github.com/bettermanbao/openwrt-shadowsocks-libev-full
   [1]: https://github.com/breakwa11/shadowsocks-libev
   [R]: https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/releases
-  [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
-  [X]: http://www.right.com.cn/forum/thread-185635-1-1.html
+  [S]: https://downloads.lede-project.org/releases/17.01.1/targets
   [E]: https://github.com/shadowsocks/openwrt-shadowsocks
   
