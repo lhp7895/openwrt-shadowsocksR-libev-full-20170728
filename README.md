@@ -21,14 +21,15 @@ ShadowsocksR-libev-full for OpenWrt
    > 默认启动:  
    > `ssr-local` 提供 SOCKS 代理  
    
- - shadowsocksR-libev
+ - shadowsocksR-libev-gfwlist
 
-   > 集成GFWList的一键安装包，含Luci界面。  
+   > 集成GFWList的一键安装包，含Luci界面。  
    
    > 可执行文件 `ssr-redir`  
    > 默认启动:  
    > `ssr-redir` 提供透明代理  
-   > 依赖[DNS-Forwarder][D]进行DNS-TCP转发。
+   > 依赖[DNS-Forwarder][D]进行DNS-TCP转发。  
+   
 
 编译  
 ---
