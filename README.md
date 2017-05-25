@@ -7,7 +7,7 @@ ShadowsocksR-libev-full for OpenWrt
  本项目是 [ShadowsocksR-libev][1] 在 OpenWrt 上的移植。   
  当前版本: v20170521  
  
- [预编译 OpenWrt Chaos Calmer ipk 下载][R]
+ [预编译 LEDE ipk 下载][R]
 
 
 特性  
@@ -20,6 +20,15 @@ ShadowsocksR-libev-full for OpenWrt
    > 可执行文件 `ssr-{local,redir}`  
    > 默认启动:  
    > `ssr-local` 提供 SOCKS 代理  
+   
+ - shadowsocksR-libev
+
+   > 集成GFWList的一键安装包，含Luci界面。
+   
+   > 可执行文件 `ssr-redir`  
+   > 默认启动:  
+   > `ssr-redir` 提供透明代理  
+   > 依赖[DNS-Forwarder][D]进行DNS-TCP转发。
 
 编译  
 ---
@@ -64,6 +73,13 @@ ShadowsocksR-libev-full for OpenWrt
 
  - shadowsocks-libev 配置文件: `/etc/shadowsocksr.json`
 
+截图  
+---
+
+![luci000](https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/blob/master/snapshot/luci%20000.png)
+![luci001](https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/blob/master/snapshot/luci%20001.png)
+![luci002](https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/blob/master/snapshot/luci%20002.png)
+![luci003](https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/blob/master/snapshot/luci%20003.png)
 
 感谢  
 ---
@@ -77,4 +93,5 @@ Makefile参考  [openwrt-shadowsocks][E]
   [R]: https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full/releases
   [S]: https://lede-project.org/docs/guide-developer/compile_packages_for_lede_with_the_sdk
   [E]: https://github.com/shadowsocks/openwrt-shadowsocks
+  [D]: https://github.com/aa65535/openwrt-dns-forwarder
   
