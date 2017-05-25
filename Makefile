@@ -142,6 +142,9 @@ define Package/shadowsocksr-libev-gfwlist/install
 	
 	#patch dnsmasq, add ipset gfwlist 
 	$(INSTALL_CONF) ./files/dnsmasq.conf $(1)/etc/dnsmasq.conf
+	$(INSTALL_DIR) $(1)/etc/dnsmasq.d
+	$(INSTALL_CONF) ./files/gfw_list.conf $(1)/etc/dnsmasq.d/gfw_list.conf
+	$(INSTALL_CONF) ./files/custom_list.conf $(1)/etc/dnsmasq.d/custom_list.conf
 	
 	#patch firewall rule, create ipset gfwlist & redirect traffic
 	$(INSTALL_CONF) ./files/firewall.user $(1)/etc/firewall.user
