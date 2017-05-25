@@ -27,8 +27,8 @@ ShadowsocksR-libev-full for OpenWrt
    
    > 可执行文件 `ssr-redir`  
    > 默认启动:  
-   > `ssr-redir` 提供透明代理  
-   > 依赖[DNS-Forwarder][D]进行DNS-TCP转发。  
+   > `ssr-redir` 提供透明代理  
+   > 依赖[DNS-Forwarder][D]进行DNS-TCP转发。  
    
 
 编译  
