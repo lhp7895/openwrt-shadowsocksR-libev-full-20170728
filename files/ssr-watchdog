@@ -16,7 +16,6 @@ while true; do
 	wget -s -q -T 3 http://www.google.com.hk
 	if [ "$?" == "0" ]; then
 		echo "[$LOGTIME] No problem."
-		exit 0
 	else
 		wget -s -q -T 3 http://www.baidu.com
 		if [ "$?" == "0" ]; then
