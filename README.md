@@ -23,8 +23,8 @@ ShadowsocksR-libev-full for OpenWrt
    
  - shadowsocksR-libev
 
-   > 集成GFWList的一键安装包，含Luci界面。
-   
+   > 集成GFWList的一键安装包，含Luci界面。  
+   
    > 可执行文件 `ssr-redir`  
    > 默认启动:  
    > `ssr-redir` 提供透明代理  
