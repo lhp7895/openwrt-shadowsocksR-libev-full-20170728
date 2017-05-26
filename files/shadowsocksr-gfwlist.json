@@ -10,5 +10,5 @@
     "obfs": "plain",
     "obfs_param": "",
     "suggested_protocol": "origin, auth_aes128_md5, auth_aes128_sha1, auth_chain_a",
-    "suggested_obfs": "plain, http_simple, http_simple_compatible, http_post, http_post_compatible, tls1.2_ticket_auth, tls1.2_ticket_auth_compatible"
+    "suggested_obfs": "plain, http_simple, http_post, tls1.2_ticket_auth"
 }
