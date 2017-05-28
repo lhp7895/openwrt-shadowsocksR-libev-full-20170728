@@ -98,7 +98,7 @@ define Package/shadowsocksr-libev-gfwlist/postinst
 if [ -z "$${IPKG_INSTROOT}" ]; then
 	/etc/init.d/firewall restart
 	/etc/init.d/shadowsocksr restart
-	/etc/init.d/dns-forarder restart
+	/etc/init.d/dns-forwarder restart
 	/etc/init.d/dnsmasq restart
 fi
 exit 0
