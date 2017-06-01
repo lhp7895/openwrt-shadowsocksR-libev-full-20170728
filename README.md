@@ -5,7 +5,7 @@ ShadowsocksR-libev-full for OpenWrt
 ---
 
  本项目是 [ShadowsocksR-libev][1] 在 OpenWrt 上的移植。   
- 当前版本: v20170521  
+ 当前版本: v20170601  
  
  [预编译 LEDE ipk 下载][R]
 
