@@ -30,6 +30,8 @@ ShadowsocksR-libev-full for OpenWrt
    > `ssr-redir` 提供透明代理  
    > 依赖[DNS-Forwarder][D]进行DNS-TCP转发。  
    
+   > 使用opkg安装ipk包时，必须带上--force-overwrite参数！  
+   
 
 编译  
 ---
@@ -52,18 +54,18 @@ ShadowsocksR-libev-full for OpenWrt
    tar xf lede-sdk-17.01.1-ramips-mt7620_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
    cd lede-sdk-*
    
+   # 一些杂七杂八的坑
+   ./scripts/feeds update base
+   ./scripts/feeds update packages
+   ./scripts/feeds install libpcre libopenssl libopenssl libmbedtls
+   wget -P package/feeds/base/mbedtls/patches https://github.com/bettermanbao/lede/raw/lede-17.01/package/libs/mbedtls/patches/999-tweak-config-for-shadowsocks.patch
+   
    # git clone openwrt-shadowsocksR-libev-full
    git clone https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full.git package/shadowsocksR-libev-full
    
    # 选择要编译的包 Network -> shadowsocksr-libev
    make menuconfig
    
-   # 一些杂七杂八的坑
-   ./scripts/feeds update base
-   ./scripts/feeds update packages
-   ./scripts/feeds install libpcre libopenssl libopenssl libmbedtls
-   wget -P package/feeds/base/mbedtls/patches https://github.com/bettermanbao/lede/raw/lede-17.01/package/libs/mbedtls/patches/999-tweak-config-for-shadowsocks.patch
-   
    # 开始编译
    make package/shadowsocksR-libev-full/compile V=s
    
