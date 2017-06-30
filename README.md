@@ -58,7 +58,7 @@ ShadowsocksR-libev-full for OpenWrt
    ./scripts/feeds update base
    ./scripts/feeds update packages
    ./scripts/feeds install libpcre libopenssl libopenssl libmbedtls
-   wget -P package/feeds/base/mbedtls/patches https://github.com/bettermanbao/lede/raw/lede-17.01/package/libs/mbedtls/patches/999-tweak-config-for-shadowsocks.patch
+   wget -P package/feeds/base/mbedtls/patches https://github.com/bettermanbao/lede/raw/lede-17.01.2/package/libs/mbedtls/patches/999-tweak-config-for-shadowsocks.patch
    
    # git clone openwrt-shadowsocksR-libev-full
    git clone https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full.git package/shadowsocksR-libev-full
