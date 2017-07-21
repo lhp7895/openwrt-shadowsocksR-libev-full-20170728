@@ -61,7 +61,7 @@ ShadowsocksR-libev-full for OpenWrt
    wget -P package/feeds/base/mbedtls/patches https://github.com/bettermanbao/lede/raw/lede-17.01.2/package/libs/mbedtls/patches/999-tweak-config-for-shadowsocks.patch
    
    # git clone openwrt-shadowsocksR-libev-full
-   git clone https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full.git package/shadowsocksR-libev-full
+   git clone -b master https://github.com/bettermanbao/openwrt-shadowsocksR-libev-full.git package/shadowsocksR-libev-full
    
    # 选择要编译的包 Network -> shadowsocksr-libev
    make menuconfig
